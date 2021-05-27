@@ -31,7 +31,7 @@ func main() {
 	// initialize sessions
 	key := []byte(os.Getenv("SESSION_ID"))
 	store := cookie.NewStore(key)
-	store.Options(sessions.Options{MaxAge: 60 * 60 * 24}) // expire in a day
+	store.Options(sessions.Options{MaxAge: 0}) // expire on close
 	r.Use(sessions.Sessions("localSession", store))
 
 	// Create endpoints

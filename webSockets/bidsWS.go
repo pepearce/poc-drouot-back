@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+// This is an attempt at a web socket connection manager. This is not functionning as is an requires redesigning.
 var (
 	upgrader = websocket.Upgrader{
 		ReadBufferSize:  1024,

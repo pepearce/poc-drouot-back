@@ -120,10 +120,10 @@ func initEntries() {
 	// Users
 	password1, _ := security.Hash("password123")
 	user1 := User{
-		FirstName: "Paul",
-		LastName:  "Pearce",
-		Address:   "70 rue mouffetard",
-		Email:     "paul.vpearce@gmail.com",
+		FirstName: "admin",
+		LastName:  "root",
+		Address:   "infinty, metaverse lane",
+		Email:     "root@admin.com",
 		Password:  string(password1),
 		Role:      "admin",
 	}
