@@ -4,7 +4,7 @@ Backend golang app for mini drouot
 # Installation
 
 Install Go
-create a mysql database for the app
+create a mysql database for the app \n
 Configure the database access credentials in "/models/db.env"
 In a terminal cd to source folder and run : 
 ```golang
