@@ -6,6 +6,9 @@ Backend golang app for mini drouot
 Install Go
 create a mysql database for the app
 Configure the database access credentials in "/models/db.env"
-In a terminal cd to source folder and run : "go build main.go && main"
+In a terminal cd to source folder and run : 
+```golang
+go build main.go && main
+```
 The API should be running
 Start front end app..
