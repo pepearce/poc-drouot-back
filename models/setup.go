@@ -8,7 +8,6 @@ import (
 	"time"
 
 	"github.com/jinzhu/gorm"
-	"github.com/joho/godotenv"
 )
 
 // Database access configuration
@@ -25,11 +24,6 @@ var DB *gorm.DB
 
 func ConnectDataBase() {
 
-	// load credentials from db.env file
-	err := godotenv.Load("./models/db.env")
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
 	// Database access configuration
 	var config = Config{
 		sqlUser:     os.Getenv("DB_USER"),

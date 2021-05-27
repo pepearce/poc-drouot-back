@@ -15,11 +15,11 @@ import (
 )
 
 func main() {
-	// load session key from session.env
-	err := godotenv.Load("./session.env")
-	if err != nil {
+	// load credentials from .env file
+	if err := godotenv.Load("./.env"); err != nil {
 		log.Fatalf("Error loading .env file")
 	}
+
 	// Open connection to database
 	models.ConnectDataBase()
 	//close database connection after server close
