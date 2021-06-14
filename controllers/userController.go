@@ -50,9 +50,7 @@ func AddUser(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	session := sessions.Default(c)
-	session.Set("sessionId", user.UUID)
-	session.Save()
+	
 	c.JSON(http.StatusOK, gin.H{"ID": user.ID, "firstName": user.FirstName, "lastName": user.LastName, "email": user.Email, "address": user.Address, "role": user.Role})
 }
 

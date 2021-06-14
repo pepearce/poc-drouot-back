@@ -37,9 +37,7 @@ func main() {
 	// Create endpoints
 	api.InitializeRoutes(r)
 
-	r.GET("/ws/article/:id", func(c *gin.Context) {
-		websockets.GetBidWebSocketPool(c.Param("id")).WSAdd(c)
-	})
+	r.GET("/ws/v1", websockets.OpenSocket)
 
 	// Run server on default port (8080)
 	r.Run(":8080")
