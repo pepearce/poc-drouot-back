@@ -36,7 +36,7 @@ func ConnectDataBase() {
 	// Set database access parameters
 	connArgs := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", config.sqlUser, config.sqlPassword, config.host, config.port, config.dbName)
 
-	//database, err := gorm.Open("mysql", "sqlDev:pa$$word123@tcp(127.0.0.1:3306)/drouotDB")
+	//database, err := gorm.Open("mysql", "mysqlDev:pa$$word123@tcp(127.0.0.1:3306)/drouotDB")
 	// Create a connection to the database
 	database, err := gorm.Open(config.dbType, connArgs)
 
@@ -54,7 +54,7 @@ func ConnectDataBase() {
 	createTables()
 
 	// Create foreign keys in tables depending on the relations between entities
-	foreignKeys()
+	// foreignKeys()
 
 	// Add unique constraints
 	uniqueConstraints()
@@ -84,6 +84,7 @@ func uniqueConstraints() {
 	DB.Exec("ALTER TABLE users ADD UNIQUE UN_users_email(email)")
 }
 
+/*
 func foreignKeys() {
 	DB.Model(&Article{}).AddForeignKey("AuctionID", "Auctions(ID)", "CASCADE", "CASCADE")
 	DB.Model(&Bid{}).AddForeignKey("UserID", "Users(ID)", "CASCADE", "CASCADE")
@@ -91,6 +92,7 @@ func foreignKeys() {
 	DB.Model(&Auction{}).AddForeignKey("UserID", "Users(ID)", "CASCADE", "CASCADE")
 
 }
+*/
 
 func dropTables() {
 
