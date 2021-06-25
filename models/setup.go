@@ -2,7 +2,6 @@ package models
 
 import (
 	"drouotBack/security"
-	"fmt"
 	"log"
 	"os"
 	"time"
@@ -10,7 +9,7 @@ import (
 	"github.com/jinzhu/gorm"
 )
 
-// Database access configuration
+/*// Database access configuration
 type Config struct {
 	sqlUser     string
 	sqlPassword string
@@ -18,13 +17,13 @@ type Config struct {
 	dbName      string
 	port        string
 	dbType      string
-}
+}*/
 
 var DB *gorm.DB
 
 func ConnectDataBase() {
 
-	// Database access configuration
+	/*// Database access configuration
 	var config = Config{
 		sqlUser:     os.Getenv("DB_USER"),
 		sqlPassword: os.Getenv("DB_PASSWORD"),
@@ -32,13 +31,17 @@ func ConnectDataBase() {
 		dbName:      os.Getenv("DB_NAME"),
 		port:        os.Getenv("PORT"),
 		dbType:      os.Getenv("DB_TYPE"),
-	}
-	// Set database access parameters
+	}*/
+	/*// Set database access parameters
 	connArgs := fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", config.sqlUser, config.sqlPassword, config.host, config.port, config.dbName)
-
+*/
 	//database, err := gorm.Open("mysql", "mysqlDev:pa$$word123@tcp(127.0.0.1:3306)/drouotDB")
+
+	connArgs := os.Getenv("DB_CONNECTION_STRING")
+	dbtype := os.Getenv("DB_TYPE")
+
 	// Create a connection to the database
-	database, err := gorm.Open(config.dbType, connArgs)
+	database, err := gorm.Open(dbtype, connArgs)
 
 	if err != nil {
 		log.Fatal(err)

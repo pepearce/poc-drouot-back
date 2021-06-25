@@ -4,21 +4,19 @@ import (
 	api "drouotBack/API"
 	"drouotBack/models"
 	websockets "drouotBack/webSockets"
-	"log"
 	"os"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
 	"github.com/gin-gonic/gin"
 	_ "github.com/go-sql-driver/mysql"
-	"github.com/joho/godotenv"
 )
 
 func main() {
 	// load credentials from .env file
-	if err := godotenv.Load("./.env"); err != nil {
+	/*if err := godotenv.Load("./.env"); err != nil {
 		log.Fatalf("Error loading .env file")
-	}
+	}*/
 
 	// Open connection to database
 	models.ConnectDataBase()
