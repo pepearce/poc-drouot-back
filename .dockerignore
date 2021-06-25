@@ -1,0 +1,6 @@
+.gitignore
+test_queries.sql
+.vscode
+.idea
+.dockerignore
+.env
